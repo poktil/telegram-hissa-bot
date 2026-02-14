@@ -14,7 +14,6 @@ async function textMessageHandler(ctx) {
   const notInsults = [...result.notInsults]
 
   if (result.insults?.length) {
-    console.log(result.insults)
     resText.push(
       `🔴 Mavjud:\n${result.insults
         .map((item, i) => `${i + 1}. ${item.insult} - ${item.word}`)
