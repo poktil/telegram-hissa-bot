@@ -16,7 +16,11 @@ async function textMessageHandler(ctx) {
   if (result.insults?.length) {
     resText.push(
       `🔴 Mavjud:\n${result.insults
-        .map((item, i) => `${i + 1}. ${item.insult} - ${item.word}`)
+        .map((item, i) =>
+          item.insult === item.word
+            ? `${i + 1}. ${item.insult}`
+            : `${i + 1}. ${item.insult} - ${item.word}`,
+        )
         .join('\n')}`,
     )
   }
